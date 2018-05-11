@@ -1,0 +1,21 @@
+<project name="tealngana" default="copys">
+<property file="ddd.properties"/>
+<!--property name="a" value="source/java/dd/redml"/-->
+<target name="print" depends="">
+<echo>this is state</echo>
+</target>
+<target name="delete" depends="print">
+<delete dir="hdd"/>
+<mkdir dir="${a}"/>
+<javac srcdir="source1"   destdir="${a}" />
+<jar   destfile="jar/app1.0"    basedir="${a}"/>
+<zip destfile="war/javac"  basedir="jar"/>
+<copy file="new1.txt" tofile="new2.txt"/>
+</target>
+<target name="copys" depends="delete">
+<copy todir="source55">
+<fileset dir="source1"/>
+</copy>
+</target>
+
+</project>
